@@ -1,0 +1,217 @@
+﻿@page
+@model PadronObligados2021.Pages.Padron.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ServidorPublico</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.Nombres" class="control-label"></label>
+                <input asp-for="ServidorPublico.Nombres" class="form-control" />
+                <span asp-validation-for="ServidorPublico.Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.PrimerApellido" class="control-label"></label>
+                <input asp-for="ServidorPublico.PrimerApellido" class="form-control" />
+                <span asp-validation-for="ServidorPublico.PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.SegundoApellido" class="control-label"></label>
+                <input asp-for="ServidorPublico.SegundoApellido" class="form-control" />
+                <span asp-validation-for="ServidorPublico.SegundoApellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.CURP" class="control-label"></label>
+                <input asp-for="ServidorPublico.CURP" class="form-control" />
+                <span asp-validation-for="ServidorPublico.CURP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.RFC" class="control-label"></label>
+                <input asp-for="ServidorPublico.RFC" class="form-control" />
+                <span asp-validation-for="ServidorPublico.RFC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.Homoclave" class="control-label"></label>
+                <input asp-for="ServidorPublico.Homoclave" class="form-control" />
+                <span asp-validation-for="ServidorPublico.Homoclave" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.CorreoElectronico" class="control-label"></label>
+                <input asp-for="ServidorPublico.CorreoElectronico" class="form-control" />
+                <span asp-validation-for="ServidorPublico.CorreoElectronico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.EntidadFederativaId" class="control-label"></label>
+                <select asp-for="ServidorPublico.EntidadFederativaId" class ="form-control" asp-items="ViewBag.EntidadFederativaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.MunicipioId" class="control-label"></label>
+                <select asp-for="ServidorPublico.MunicipioId" class ="form-control" asp-items="ViewBag.MunicipioId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.LocalidadNombre" class="control-label"></label>
+                <input asp-for="ServidorPublico.LocalidadNombre" class="form-control" />
+                <span asp-validation-for="ServidorPublico.LocalidadNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.CodigoPostal" class="control-label"></label>
+                <input asp-for="ServidorPublico.CodigoPostal" class="form-control" />
+                <span asp-validation-for="ServidorPublico.CodigoPostal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.CalleNombre" class="control-label"></label>
+                <input asp-for="ServidorPublico.CalleNombre" class="form-control" />
+                <span asp-validation-for="ServidorPublico.CalleNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NumeroExterior" class="control-label"></label>
+                <input asp-for="ServidorPublico.NumeroExterior" class="form-control" />
+                <span asp-validation-for="ServidorPublico.NumeroExterior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NumeroInterior" class="control-label"></label>
+                <input asp-for="ServidorPublico.NumeroInterior" class="form-control" />
+                <span asp-validation-for="ServidorPublico.NumeroInterior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NumeroCelular" class="control-label"></label>
+                <input asp-for="ServidorPublico.NumeroCelular" class="form-control" />
+                <span asp-validation-for="ServidorPublico.NumeroCelular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.SituacionPersonalId" class="control-label"></label>
+                <select asp-for="ServidorPublico.SituacionPersonalId" class ="form-control" asp-items="ViewBag.SituacionPersonalId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.RegimenMatrimonialId" class="control-label"></label>
+                <select asp-for="ServidorPublico.RegimenMatrimonialId" class ="form-control" asp-items="ViewBag.RegimenMatrimonialId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NumeroIdentificacionOficial" class="control-label"></label>
+                <input asp-for="ServidorPublico.NumeroIdentificacionOficial" class="form-control" />
+                <span asp-validation-for="ServidorPublico.NumeroIdentificacionOficial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.FuncionPrincipalId" class="control-label"></label>
+                <select asp-for="ServidorPublico.FuncionPrincipalId" class ="form-control" asp-items="ViewBag.FuncionPrincipalId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.TelefonoOficina" class="control-label"></label>
+                <input asp-for="ServidorPublico.TelefonoOficina" class="form-control" />
+                <span asp-validation-for="ServidorPublico.TelefonoOficina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.EsServidorPublicoAnioAnterior" class="control-label"></label>
+                <input asp-for="ServidorPublico.EsServidorPublicoAnioAnterior" class="form-control" />
+                <span asp-validation-for="ServidorPublico.EsServidorPublicoAnioAnterior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NivelEscolarId" class="control-label"></label>
+                <select asp-for="ServidorPublico.NivelEscolarId" class ="form-control" asp-items="ViewBag.NivelEscolarId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.InstitucionEducativa" class="control-label"></label>
+                <input asp-for="ServidorPublico.InstitucionEducativa" class="form-control" />
+                <span asp-validation-for="ServidorPublico.InstitucionEducativa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.CarreraArea" class="control-label"></label>
+                <input asp-for="ServidorPublico.CarreraArea" class="form-control" />
+                <span asp-validation-for="ServidorPublico.CarreraArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.EstatusNivelEscolaridad" class="control-label"></label>
+                <input asp-for="ServidorPublico.EstatusNivelEscolaridad" class="form-control" />
+                <span asp-validation-for="ServidorPublico.EstatusNivelEscolaridad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.DocumentoObtenido" class="control-label"></label>
+                <input asp-for="ServidorPublico.DocumentoObtenido" class="form-control" />
+                <span asp-validation-for="ServidorPublico.DocumentoObtenido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.FechaObtencion" class="control-label"></label>
+                <input asp-for="ServidorPublico.FechaObtencion" class="form-control" />
+                <span asp-validation-for="ServidorPublico.FechaObtencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.LugarInstitucion" class="control-label"></label>
+                <input asp-for="ServidorPublico.LugarInstitucion" class="form-control" />
+                <span asp-validation-for="ServidorPublico.LugarInstitucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.AmbitoSectorLaboral" class="control-label"></label>
+                <input asp-for="ServidorPublico.AmbitoSectorLaboral" class="form-control" />
+                <span asp-validation-for="ServidorPublico.AmbitoSectorLaboral" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.Nivel" class="control-label"></label>
+                <input asp-for="ServidorPublico.Nivel" class="form-control" />
+                <span asp-validation-for="ServidorPublico.Nivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.AmbitoPublico" class="control-label"></label>
+                <input asp-for="ServidorPublico.AmbitoPublico" class="form-control" />
+                <span asp-validation-for="ServidorPublico.AmbitoPublico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.NombreEntePublico" class="control-label"></label>
+                <input asp-for="ServidorPublico.NombreEntePublico" class="form-control" />
+                <span asp-validation-for="ServidorPublico.NombreEntePublico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.RFCEntePublico" class="control-label"></label>
+                <input asp-for="ServidorPublico.RFCEntePublico" class="form-control" />
+                <span asp-validation-for="ServidorPublico.RFCEntePublico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.AreaAdscripcion" class="control-label"></label>
+                <input asp-for="ServidorPublico.AreaAdscripcion" class="form-control" />
+                <span asp-validation-for="ServidorPublico.AreaAdscripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.EmpleoCargoComision" class="control-label"></label>
+                <input asp-for="ServidorPublico.EmpleoCargoComision" class="form-control" />
+                <span asp-validation-for="ServidorPublico.EmpleoCargoComision" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.FuncionPrincipalExperiencia" class="control-label"></label>
+                <input asp-for="ServidorPublico.FuncionPrincipalExperiencia" class="form-control" />
+                <span asp-validation-for="ServidorPublico.FuncionPrincipalExperiencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.FechaIngreso" class="control-label"></label>
+                <input asp-for="ServidorPublico.FechaIngreso" class="form-control" />
+                <span asp-validation-for="ServidorPublico.FechaIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.FechaEgreso" class="control-label"></label>
+                <input asp-for="ServidorPublico.FechaEgreso" class="form-control" />
+                <span asp-validation-for="ServidorPublico.FechaEgreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServidorPublico.SectorId" class="control-label"></label>
+                <select asp-for="ServidorPublico.SectorId" class ="form-control" asp-items="ViewBag.SectorId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,214 @@
+﻿@page
+@model PadronObligados2021.Pages.Padron.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ServidorPublico</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.Nombres)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.Nombres)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.PrimerApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.PrimerApellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.SegundoApellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.SegundoApellido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.CURP)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.CURP)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.RFC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.RFC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.Homoclave)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.Homoclave)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.CorreoElectronico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.CorreoElectronico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.LocalidadNombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.LocalidadNombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.CodigoPostal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.CodigoPostal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.CalleNombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.CalleNombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.NumeroExterior)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.NumeroExterior)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.NumeroInterior)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.NumeroInterior)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.NumeroCelular)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.NumeroCelular)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.NumeroIdentificacionOficial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.NumeroIdentificacionOficial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.TelefonoOficina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.TelefonoOficina)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.EsServidorPublicoAnioAnterior)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.EsServidorPublicoAnioAnterior)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.InstitucionEducativa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.InstitucionEducativa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.CarreraArea)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.CarreraArea)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.EstatusNivelEscolaridad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.EstatusNivelEscolaridad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.DocumentoObtenido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.DocumentoObtenido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.FechaObtencion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.FechaObtencion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.LugarInstitucion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.LugarInstitucion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.AmbitoSectorLaboral)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.AmbitoSectorLaboral)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.Nivel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.Nivel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.AmbitoPublico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.AmbitoPublico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.NombreEntePublico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.NombreEntePublico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.RFCEntePublico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.RFCEntePublico)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.AreaAdscripcion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.AreaAdscripcion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.EmpleoCargoComision)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.EmpleoCargoComision)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.FuncionPrincipalExperiencia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.FuncionPrincipalExperiencia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.FechaIngreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.FechaIngreso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServidorPublico.FechaEgreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServidorPublico.FechaEgreso)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ServidorPublico.ServidorPublicoId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

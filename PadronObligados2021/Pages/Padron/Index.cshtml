@@ -1,0 +1,222 @@
+﻿@page
+@model PadronObligados2021.Pages.Padron.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].PrimerApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].SegundoApellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].CURP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].RFC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].Homoclave)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].CorreoElectronico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].LocalidadNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].CodigoPostal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].CalleNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NumeroExterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NumeroInterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NumeroCelular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NumeroIdentificacionOficial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].TelefonoOficina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].EsServidorPublicoAnioAnterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].InstitucionEducativa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].CarreraArea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].EstatusNivelEscolaridad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].DocumentoObtenido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].FechaObtencion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].LugarInstitucion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].AmbitoSectorLaboral)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].Nivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].AmbitoPublico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NombreEntePublico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].RFCEntePublico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].AreaAdscripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].EmpleoCargoComision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].FuncionPrincipalExperiencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].FechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].FechaEgreso)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ServidorPublico) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimerApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SegundoApellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CURP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Homoclave)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CorreoElectronico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalidadNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoPostal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalleNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroExterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroInterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroCelular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroIdentificacionOficial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonoOficina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EsServidorPublicoAnioAnterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstitucionEducativa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarreraArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstatusNivelEscolaridad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentoObtenido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaObtencion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LugarInstitucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmbitoSectorLaboral)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmbitoPublico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEntePublico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFCEntePublico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaAdscripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpleoCargoComision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuncionPrincipalExperiencia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEgreso)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ServidorPublicoId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ServidorPublicoId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ServidorPublicoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
