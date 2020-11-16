@@ -28,7 +28,13 @@ namespace PadronObligados2021.Pages.Padron
                 return NotFound();
             }
 
-            ServidorPublico = await _context.ServidorPublico.FirstOrDefaultAsync(m => m.ServidorPublicoId == id);
+            ServidorPublico = await _context.ServidorPublico
+                .Include(s => s.FuncionPrincipal)
+                .Include(s => s.Municipio)
+                .Include(s => s.NivelEscolar)
+                .Include(s => s.RegimenMatrimonial)
+                .Include(s => s.Sector)
+                .Include(s => s.SituacionPersonal).FirstOrDefaultAsync(m => m.ServidorPublicoId == id);
 
             if (ServidorPublico == null)
             {

@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using PadronObligados2021.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PadronObligados2021
 {
@@ -26,7 +27,8 @@ namespace PadronObligados2021
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+            services.AddSession();
+            services.AddMvc(option => option.EnableEndpointRouting = false);//
             services.AddDbContext<PadronObligados2021Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("PadronObligados2021Context")));
         }
@@ -56,6 +58,9 @@ namespace PadronObligados2021
             {
                 endpoints.MapRazorPages();
             });
+
+            app.UseSession();
+            app.UseMvc();
         }
     }
 }

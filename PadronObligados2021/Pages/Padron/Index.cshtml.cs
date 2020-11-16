@@ -23,7 +23,13 @@ namespace PadronObligados2021.Pages.Padron
 
         public async Task OnGetAsync()
         {
-            ServidorPublico = await _context.ServidorPublico.ToListAsync();
+            ServidorPublico = await _context.ServidorPublico
+                .Include(s => s.FuncionPrincipal)
+                .Include(s => s.Municipio)
+                .Include(s => s.NivelEscolar)
+                .Include(s => s.RegimenMatrimonial)
+                .Include(s => s.Sector)
+                .Include(s => s.SituacionPersonal).ToListAsync();
         }
     }
 }

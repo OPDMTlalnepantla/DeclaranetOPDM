@@ -13,14 +13,11 @@ namespace PadronObligados2021.Models
     {
         public EntidadFederativa()
         {
-            Servidores = new ObservableCollection<ServidorPublico>();
             Municipios = new ObservableCollection<Municipio>();
         }
-        [StringLength(2)]
-        public string EntidadFederativaId { get; set; }//                         1 Identificador único del registro, número consecutivo
+        public int EntidadFederativaId { get; set; }//                         1 Identificador único del registro, número consecutivo
         [StringLength(100)]
         public string Nombre { get; set; }//                                2 Nombre completo
-        public virtual ObservableCollection<ServidorPublico> Servidores { get; set; }
         public virtual ObservableCollection<Municipio> Municipios { get; set; }
     }
 }

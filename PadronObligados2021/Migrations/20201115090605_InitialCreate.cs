@@ -11,7 +11,8 @@ namespace PadronObligados2021.Migrations
                 name: "EntidadesFederativas",
                 columns: table => new
                 {
-                    EntidadFederativaId = table.Column<string>(maxLength: 2, nullable: false),
+                    EntidadFederativaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
@@ -74,7 +75,7 @@ namespace PadronObligados2021.Migrations
                 columns: table => new
                 {
                     SituacionPersonalId = table.Column<string>(maxLength: 3, nullable: false),
-                    Nombre = table.Column<string>(maxLength: 35, nullable: true)
+                    Nombre = table.Column<string>(maxLength: 40, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -88,7 +89,7 @@ namespace PadronObligados2021.Migrations
                     MunicipioId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(maxLength: 100, nullable: true),
-                    EntidadFederativaId = table.Column<string>(maxLength: 2, nullable: true)
+                    EntidadFederativaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -98,11 +99,11 @@ namespace PadronObligados2021.Migrations
                         column: x => x.EntidadFederativaId,
                         principalTable: "EntidadesFederativas",
                         principalColumn: "EntidadFederativaId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ServidorPublico",
+                name: "ServidoresPublicos",
                 columns: table => new
                 {
                     ServidorPublicoId = table.Column<int>(nullable: false)
@@ -114,10 +115,7 @@ namespace PadronObligados2021.Migrations
                     RFC = table.Column<string>(maxLength: 10, nullable: true),
                     Homoclave = table.Column<string>(maxLength: 3, nullable: true),
                     CorreoElectronico = table.Column<string>(maxLength: 100, nullable: true),
-                    EntidadFederativaIdDomicilio = table.Column<string>(maxLength: 2, nullable: true),
-                    EntidadFederativaNombreDomicilio = table.Column<string>(maxLength: 100, nullable: true),
                     MunicipioId = table.Column<int>(nullable: false),
-                    MunicipioNombre = table.Column<string>(maxLength: 100, nullable: true),
                     LocalidadNombre = table.Column<string>(maxLength: 50, nullable: true),
                     CodigoPostal = table.Column<int>(nullable: false),
                     CalleNombre = table.Column<string>(maxLength: 50, nullable: true),
@@ -125,15 +123,12 @@ namespace PadronObligados2021.Migrations
                     NumeroInterior = table.Column<string>(maxLength: 10, nullable: true),
                     NumeroCelular = table.Column<string>(maxLength: 10, nullable: true),
                     SituacionPersonalId = table.Column<string>(maxLength: 3, nullable: true),
-                    SituacionPersonalNombre = table.Column<string>(maxLength: 35, nullable: true),
                     RegimenMatrimonialId = table.Column<string>(maxLength: 3, nullable: true),
-                    RegimenMatrimonialNombre = table.Column<string>(maxLength: 20, nullable: true),
                     NumeroIdentificacionOficial = table.Column<string>(maxLength: 50, nullable: true),
-                    FuncionPrincipalNombre = table.Column<string>(maxLength: 150, nullable: true),
+                    FuncionPrincipalId = table.Column<int>(nullable: false),
                     TelefonoOficina = table.Column<string>(maxLength: 20, nullable: true),
                     EsServidorPublicoAnioAnterior = table.Column<string>(maxLength: 2, nullable: true),
                     NivelEscolarId = table.Column<string>(maxLength: 3, nullable: true),
-                    NivelEscolarNombre = table.Column<string>(maxLength: 30, nullable: true),
                     InstitucionEducativa = table.Column<string>(maxLength: 200, nullable: true),
                     CarreraArea = table.Column<string>(maxLength: 150, nullable: true),
                     EstatusNivelEscolaridad = table.Column<string>(maxLength: 10, nullable: true),
@@ -151,51 +146,43 @@ namespace PadronObligados2021.Migrations
                     FechaIngreso = table.Column<DateTime>(nullable: false),
                     FechaEgreso = table.Column<DateTime>(nullable: false),
                     SectorId = table.Column<int>(maxLength: 10, nullable: false),
-                    SectorNombre = table.Column<string>(maxLength: 150, nullable: true),
-                    EntidadFederativaId = table.Column<string>(nullable: true),
-                    FuncionPrincipalId = table.Column<int>(nullable: true)
+                    NumeroEmpleado = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ServidorPublico", x => x.ServidorPublicoId);
+                    table.PrimaryKey("PK_ServidoresPublicos", x => x.ServidorPublicoId);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_EntidadesFederativas_EntidadFederativaId",
-                        column: x => x.EntidadFederativaId,
-                        principalTable: "EntidadesFederativas",
-                        principalColumn: "EntidadFederativaId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ServidorPublico_FuncionesPrincipales_FuncionPrincipalId",
+                        name: "FK_ServidoresPublicos_FuncionesPrincipales_FuncionPrincipalId",
                         column: x => x.FuncionPrincipalId,
                         principalTable: "FuncionesPrincipales",
                         principalColumn: "FuncionPrincipalId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_Municipios_MunicipioId",
+                        name: "FK_ServidoresPublicos_Municipios_MunicipioId",
                         column: x => x.MunicipioId,
                         principalTable: "Municipios",
                         principalColumn: "MunicipioId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_NivelesEscolares_NivelEscolarId",
+                        name: "FK_ServidoresPublicos_NivelesEscolares_NivelEscolarId",
                         column: x => x.NivelEscolarId,
                         principalTable: "NivelesEscolares",
                         principalColumn: "NivelEscolarId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_RegimenesMatrimoniales_RegimenMatrimonialId",
+                        name: "FK_ServidoresPublicos_RegimenesMatrimoniales_RegimenMatrimonialId",
                         column: x => x.RegimenMatrimonialId,
                         principalTable: "RegimenesMatrimoniales",
                         principalColumn: "RegimenMatrimonialId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_Sectores_SectorId",
+                        name: "FK_ServidoresPublicos_Sectores_SectorId",
                         column: x => x.SectorId,
                         principalTable: "Sectores",
                         principalColumn: "SectorId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ServidorPublico_SituacionesPersonales_SituacionPersonalId",
+                        name: "FK_ServidoresPublicos_SituacionesPersonales_SituacionPersonalId",
                         column: x => x.SituacionPersonalId,
                         principalTable: "SituacionesPersonales",
                         principalColumn: "SituacionPersonalId",
@@ -208,45 +195,40 @@ namespace PadronObligados2021.Migrations
                 column: "EntidadFederativaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_EntidadFederativaId",
-                table: "ServidorPublico",
-                column: "EntidadFederativaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_FuncionPrincipalId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_FuncionPrincipalId",
+                table: "ServidoresPublicos",
                 column: "FuncionPrincipalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_MunicipioId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_MunicipioId",
+                table: "ServidoresPublicos",
                 column: "MunicipioId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_NivelEscolarId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_NivelEscolarId",
+                table: "ServidoresPublicos",
                 column: "NivelEscolarId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_RegimenMatrimonialId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_RegimenMatrimonialId",
+                table: "ServidoresPublicos",
                 column: "RegimenMatrimonialId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_SectorId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_SectorId",
+                table: "ServidoresPublicos",
                 column: "SectorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ServidorPublico_SituacionPersonalId",
-                table: "ServidorPublico",
+                name: "IX_ServidoresPublicos_SituacionPersonalId",
+                table: "ServidoresPublicos",
                 column: "SituacionPersonalId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ServidorPublico");
+                name: "ServidoresPublicos");
 
             migrationBuilder.DropTable(
                 name: "FuncionesPrincipales");

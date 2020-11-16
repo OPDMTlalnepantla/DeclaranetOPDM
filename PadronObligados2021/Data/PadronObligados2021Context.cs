@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using PadronObligados2021.Models;
 
 namespace PadronObligados2021.Data
@@ -23,6 +24,13 @@ namespace PadronObligados2021.Data
         public DbSet<PadronObligados2021.Models.Sector> Sector { get; set; }
         public DbSet<PadronObligados2021.Models.SituacionPersonal> SituacionPersonal { get; set; }
 
+        public static readonly ILoggerFactory MyLoggerFactory
+            = LoggerFactory.Create(builder => { builder.AddConsole(); });
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder
+                .UseLoggerFactory(MyLoggerFactory)
+                .UseSqlServer(@"Server=L2-IV-SIS-2;Database=PadronObligados2021; user id=sa; password=Aaaa1234;ConnectRetryCount=0")
+                .EnableDetailedErrors();
     }
 }

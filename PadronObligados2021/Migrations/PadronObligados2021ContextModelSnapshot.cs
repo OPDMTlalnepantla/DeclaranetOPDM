@@ -21,9 +21,10 @@ namespace PadronObligados2021.Migrations
 
             modelBuilder.Entity("PadronObligados2021.Models.EntidadFederativa", b =>
                 {
-                    b.Property<string>("EntidadFederativaId")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
+                    b.Property<int>("EntidadFederativaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(100)")
@@ -57,9 +58,8 @@ namespace PadronObligados2021.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("EntidadFederativaId")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
+                    b.Property<int>("EntidadFederativaId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(100)")
@@ -164,17 +164,6 @@ namespace PadronObligados2021.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<string>("EntidadFederativaId")
-                        .HasColumnType("nvarchar(2)");
-
-                    b.Property<string>("EntidadFederativaIdDomicilio")
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<string>("EntidadFederativaNombreDomicilio")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
                     b.Property<string>("EsServidorPublicoAnioAnterior")
                         .HasColumnType("nvarchar(2)")
                         .HasMaxLength(2);
@@ -196,12 +185,8 @@ namespace PadronObligados2021.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
-                    b.Property<int?>("FuncionPrincipalId")
+                    b.Property<int>("FuncionPrincipalId")
                         .HasColumnType("int");
-
-                    b.Property<string>("FuncionPrincipalNombre")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
 
                     b.Property<string>("Homoclave")
                         .HasColumnType("nvarchar(3)")
@@ -222,10 +207,6 @@ namespace PadronObligados2021.Migrations
                     b.Property<int>("MunicipioId")
                         .HasColumnType("int");
 
-                    b.Property<string>("MunicipioNombre")
-                        .HasColumnType("nvarchar(100)")
-                        .HasMaxLength(100);
-
                     b.Property<string>("Nivel")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
@@ -233,10 +214,6 @@ namespace PadronObligados2021.Migrations
                     b.Property<string>("NivelEscolarId")
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
-
-                    b.Property<string>("NivelEscolarNombre")
-                        .HasColumnType("nvarchar(30)")
-                        .HasMaxLength(30);
 
                     b.Property<string>("NombreEntePublico")
                         .HasColumnType("nvarchar(100)")
@@ -249,6 +226,9 @@ namespace PadronObligados2021.Migrations
                     b.Property<string>("NumeroCelular")
                         .HasColumnType("nvarchar(10)")
                         .HasMaxLength(10);
+
+                    b.Property<int>("NumeroEmpleado")
+                        .HasColumnType("int");
 
                     b.Property<string>("NumeroExterior")
                         .HasColumnType("nvarchar(10)")
@@ -278,17 +258,9 @@ namespace PadronObligados2021.Migrations
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
 
-                    b.Property<string>("RegimenMatrimonialNombre")
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
                     b.Property<int>("SectorId")
                         .HasColumnType("int")
                         .HasMaxLength(10);
-
-                    b.Property<string>("SectorNombre")
-                        .HasColumnType("nvarchar(150)")
-                        .HasMaxLength(150);
 
                     b.Property<string>("SegundoApellido")
                         .HasColumnType("nvarchar(40)")
@@ -298,17 +270,11 @@ namespace PadronObligados2021.Migrations
                         .HasColumnType("nvarchar(3)")
                         .HasMaxLength(3);
 
-                    b.Property<string>("SituacionPersonalNombre")
-                        .HasColumnType("nvarchar(35)")
-                        .HasMaxLength(35);
-
                     b.Property<string>("TelefonoOficina")
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
                     b.HasKey("ServidorPublicoId");
-
-                    b.HasIndex("EntidadFederativaId");
 
                     b.HasIndex("FuncionPrincipalId");
 
@@ -322,7 +288,7 @@ namespace PadronObligados2021.Migrations
 
                     b.HasIndex("SituacionPersonalId");
 
-                    b.ToTable("ServidorPublico");
+                    b.ToTable("ServidoresPublicos");
                 });
 
             modelBuilder.Entity("PadronObligados2021.Models.SituacionPersonal", b =>
@@ -332,8 +298,8 @@ namespace PadronObligados2021.Migrations
                         .HasMaxLength(3);
 
                     b.Property<string>("Nombre")
-                        .HasColumnType("nvarchar(35)")
-                        .HasMaxLength(35);
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
                     b.HasKey("SituacionPersonalId");
 
@@ -344,40 +310,40 @@ namespace PadronObligados2021.Migrations
                 {
                     b.HasOne("PadronObligados2021.Models.EntidadFederativa", null)
                         .WithMany("Municipios")
-                        .HasForeignKey("EntidadFederativaId");
+                        .HasForeignKey("EntidadFederativaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("PadronObligados2021.Models.ServidorPublico", b =>
                 {
-                    b.HasOne("PadronObligados2021.Models.EntidadFederativa", null)
+                    b.HasOne("PadronObligados2021.Models.FuncionPrincipal", "FuncionPrincipal")
                         .WithMany("Servidores")
-                        .HasForeignKey("EntidadFederativaId");
+                        .HasForeignKey("FuncionPrincipalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("PadronObligados2021.Models.FuncionPrincipal", null)
-                        .WithMany("Servidores")
-                        .HasForeignKey("FuncionPrincipalId");
-
-                    b.HasOne("PadronObligados2021.Models.Municipio", null)
+                    b.HasOne("PadronObligados2021.Models.Municipio", "Municipio")
                         .WithMany("Servidores")
                         .HasForeignKey("MunicipioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PadronObligados2021.Models.NivelEscolar", null)
+                    b.HasOne("PadronObligados2021.Models.NivelEscolar", "NivelEscolar")
                         .WithMany("Servidores")
                         .HasForeignKey("NivelEscolarId");
 
-                    b.HasOne("PadronObligados2021.Models.RegimenMatrimonial", null)
+                    b.HasOne("PadronObligados2021.Models.RegimenMatrimonial", "RegimenMatrimonial")
                         .WithMany("Servidores")
                         .HasForeignKey("RegimenMatrimonialId");
 
-                    b.HasOne("PadronObligados2021.Models.Sector", null)
+                    b.HasOne("PadronObligados2021.Models.Sector", "Sector")
                         .WithMany("Servidores")
                         .HasForeignKey("SectorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PadronObligados2021.Models.SituacionPersonal", null)
+                    b.HasOne("PadronObligados2021.Models.SituacionPersonal", "SituacionPersonal")
                         .WithMany("Servidores")
                         .HasForeignKey("SituacionPersonalId");
                 });

@@ -22,6 +22,9 @@ namespace PadronObligados2021.Pages.Padron
 
         [BindProperty]
         public ServidorPublico ServidorPublico { get; set; }
+        [BindProperty]
+        public int EntidadFederativaId { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +33,34 @@ namespace PadronObligados2021.Pages.Padron
                 return NotFound();
             }
 
-            ServidorPublico = await _context.ServidorPublico.FirstOrDefaultAsync(m => m.ServidorPublicoId == id);
+            ServidorPublico = await _context.ServidorPublico
+                .Include(s => s.FuncionPrincipal)
+                .Include(s => s.Municipio)
+                .Include(s => s.NivelEscolar)
+                .Include(s => s.RegimenMatrimonial)
+                .Include(s => s.Sector)
+                .Include(s => s.SituacionPersonal).FirstOrDefaultAsync(m => m.ServidorPublicoId == id);
 
             if (ServidorPublico == null)
             {
                 return NotFound();
             }
+           ViewData["FuncionesPrincipales"] = new SelectList(_context.FuncionPrincipal, "FuncionPrincipalId", "Nombre");
+           ViewData["EntidadesFederativas"] = new SelectList(_context.EntidadFederativa, "EntidadFederativaId", "Nombre");
+           ViewData["Municipios"] = new SelectList(_context.Municipio, "MunicipioId", "Nombre");
+           ViewData["NivelesEscolarId"] = new SelectList(_context.NivelEscolar, "NivelEscolarId", "Nombre");
+           ViewData["RegimenesMatrimoniales"] = new SelectList(_context.RegimenMatrimonial, "RegimenMatrimonialId", "Nombre");
+           ViewData["Sectores"] = new SelectList(_context.Sector, "SectorId", "Nombre");
+           ViewData["SituacionesPersonales"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "Nombre");
+           ViewData["EstatusEscolaridad"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "Nombre");
+
+            //Staff = new List<SelectListItem>
+            //{
+            //    new SelectListItem{ Value = "1", Text = "Mike", Group = IT},
+            //    new SelectListItem{ Value = "2", Text = "Pete", Group = Sales},
+            //    new SelectListItem{ Value = "3", Text = "Katy", Group = Admin},
+            //    new SelectListItem{ Value = "4", Text = "Dean", Group = Sales}
+            //};
             return Page();
         }
 
@@ -46,25 +71,29 @@ namespace PadronObligados2021.Pages.Padron
             if (!ModelState.IsValid)
             {
                 return Page();
+            } else
+            {
+                string nombreMmunicipio = ServidorPublico.Municipio.Nombre;
+                int municipioId = ServidorPublico.MunicipioId;
             }
 
             _context.Attach(ServidorPublico).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ServidorPublicoExists(ServidorPublico.ServidorPublicoId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            //try
+            //{
+            //await _context.SaveChangesAsync();
+            //}
+            //catch (DbUpdateConcurrencyException)
+            //{
+            //    if (!ServidorPublicoExists(ServidorPublico.ServidorPublicoId))
+            //    {
+            //        return NotFound();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
 
             return RedirectToPage("./Index");
         }

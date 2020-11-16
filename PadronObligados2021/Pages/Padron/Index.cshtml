@@ -109,6 +109,27 @@
             <th>
                 @Html.DisplayNameFor(model => model.ServidorPublico[0].FechaEgreso)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].Municipio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].SituacionPersonal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].RegimenMatrimonial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].FuncionPrincipal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NivelEscolar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].Sector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServidorPublico[0].NumeroEmpleado)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -210,6 +231,27 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaEgreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio.MunicipioId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SituacionPersonal.SituacionPersonalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegimenMatrimonial.RegimenMatrimonialId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuncionPrincipal.FuncionPrincipalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelEscolar.NivelEscolarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector.SectorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroEmpleado)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ServidorPublicoId">Edit</a> |

@@ -21,6 +21,12 @@ namespace PadronObligados2021.Pages.Padron
 
         public IActionResult OnGet()
         {
+        ViewData["FuncionPrincipalId"] = new SelectList(_context.FuncionPrincipal, "FuncionPrincipalId", "FuncionPrincipalId");
+        ViewData["MunicipioId"] = new SelectList(_context.Municipio, "MunicipioId", "MunicipioId");
+        ViewData["NivelEscolarId"] = new SelectList(_context.NivelEscolar, "NivelEscolarId", "NivelEscolarId");
+        ViewData["RegimenMatrimonialId"] = new SelectList(_context.RegimenMatrimonial, "RegimenMatrimonialId", "RegimenMatrimonialId");
+        ViewData["SectorId"] = new SelectList(_context.Sector, "SectorId", "SectorId");
+        ViewData["SituacionPersonalId"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "SituacionPersonalId");
             return Page();
         }
 

@@ -18,8 +18,7 @@ namespace PadronObligados2021.Models
         public int MunicipioId { get; set; }//                         1 Identificador único del registro, número consecutivo
         [StringLength(100)]
         public string Nombre { get; set; }//                                2 Nombre completo
-        [StringLength(2)]
-        public string EntidadFederativaId { get; set; }//                         1 Identificador único del registro, número consecutivo
+        public int EntidadFederativaId { get; set; }//                         1 Identificador único del registro, número consecutivo
         public virtual ObservableCollection<ServidorPublico> Servidores { get; set; }
     }
 }

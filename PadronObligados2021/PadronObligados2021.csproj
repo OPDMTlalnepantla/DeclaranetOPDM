@@ -15,6 +15,12 @@
     <Compile Remove="Migrations\20201110190533_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20201110194811_InitialCreate.cs" />
     <Compile Remove="Migrations\20201110194811_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201115083319_iNITIALcREATE.cs" />
+    <Compile Remove="Migrations\20201115083319_iNITIALcREATE.Designer.cs" />
+    <Compile Remove="Migrations\20201115083834_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201115083834_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201115084514_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201115084514_InitialCreate.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +30,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 

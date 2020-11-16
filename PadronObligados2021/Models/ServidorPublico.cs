@@ -45,13 +45,12 @@ namespace PadronObligados2021.Models
         //public string PaisIdDomicilio { get; set; }//                     17 Id País Id del país del domicilio   Catálogo Paises
         //[StringLength(100)]
         //public string PaisNombreDomicilio { get; set; }//                 18 Nombre del país del domicilio en mayusculas Catálogo Paises
-        [StringLength(2)]
-        public string EntidadFederativaId { get; set; }//          19 Id de la entidad federativa si el domicilio es en México Catálogo Entidades Federativas
+        //public int EntidadFederativaId { get; set; }//                      19 Id de la entidad federativa si el domicilio es en México Catálogo Entidades Federativas
         //[StringLength(100)]
-        //public string EntidadFederativaNombreDomicilio { get; set; }//      20 Nombre de la entidad federativa en mayusculas si el domicilio es en México Catálogo Entidades Federativas
+        //public string EntidadFederativaNombreDomicilio { get; set; }//    20 Nombre de la entidad federativa en mayusculas si el domicilio es en México Catálogo Entidades Federativas
         public int MunicipioId { get; set; }//                              21 Id del municipio si el domicilio es en México   Catálogo Municipios
         //[StringLength(100)]
-        //public string MunicipioNombre { get; set; }//                       22 Nombre del municipio en mayusculas si el domicilio es en México Catálogo Municipios
+        //public string MunicipioNombre { get; set; }//                     22 Nombre del municipio en mayusculas si el domicilio es en México Catálogo Municipios
         [StringLength(50)]
         public string LocalidadNombre { get; set; }//                       23 Descripción localidad / Colonia Nombre de la localidad si el domicilio es en México Texto, 50 caracteres
         public int CodigoPostal { get; set; }//                             24 Código postal Codigo postal si el domicilio es en México Numerico, 5 
@@ -169,12 +168,13 @@ namespace PadronObligados2021.Models
                                          //                          18 Epecifique el otro sector al que pertenece      Texto, 100 caracteres
                                          //                          19 Lugar donde se ubica Lugar donde se ubica(MÉXICO / EN EL EXTRANJERO)    Texto, 16 caracteres
 
-        public EntidadFederativa EntidadFederativa { get; set; }
+        //public EntidadFederativa EntidadFederativa { get; set; }
         public Municipio Municipio { get; set; }
         public SituacionPersonal SituacionPersonal { get; set; }
         public RegimenMatrimonial RegimenMatrimonial { get; set; }
         public FuncionPrincipal FuncionPrincipal { get; set; }
         public NivelEscolar NivelEscolar { get; set; }
         public Sector Sector { get; set; }
+        public int NumeroEmpleado { get; set; }
     }
 }
