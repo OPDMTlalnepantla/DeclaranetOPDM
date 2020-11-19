@@ -24,6 +24,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Aviso_de_Privacidad_Declaracion_patrimonial.pdf" />
+    <Content Remove="wwwroot\Imagenes\DeclaracionAmplia.JPG" />
+    <Content Remove="wwwroot\Imagenes\DeclaracionAmplia.png" />
+    <Content Remove="wwwroot\Imagenes\DeclaracionSimple.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Aviso_de_Privacidad_Declaracion_patrimonial.pdf" />
+    <None Include="wwwroot\Imagenes\DeclaracionAmplia.JPG" />
+    <None Include="wwwroot\Imagenes\DeclaracionAmplia.png" />
+    <None Include="wwwroot\Imagenes\DeclaracionSimple.JPG" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">

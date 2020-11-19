@@ -71,29 +71,25 @@ namespace PadronObligados2021.Pages.Padron
             if (!ModelState.IsValid)
             {
                 return Page();
-            } else
-            {
-                string nombreMmunicipio = ServidorPublico.Municipio.Nombre;
-                int municipioId = ServidorPublico.MunicipioId;
             }
 
             _context.Attach(ServidorPublico).State = EntityState.Modified;
 
-            //try
-            //{
-            //await _context.SaveChangesAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!ServidorPublicoExists(ServidorPublico.ServidorPublicoId))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ServidorPublicoExists(ServidorPublico.ServidorPublicoId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return RedirectToPage("./Index");
         }

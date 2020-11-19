@@ -42,7 +42,13 @@ namespace PadronObligados2021.Pages
             {
                 //HttpContext.Session.SetString("username", Username);
                 //return RedirectToPage("/Padron/Edit?id="+ servidorPublico.ServidorPublicoId.ToString());
-                return RedirectToPage("/Padron/Edit", new { id = servidorPublico.ServidorPublicoId.ToString() });
+                if (servidorPublico.NumeroEmpleado == 5450)
+                {
+                    return RedirectToPage("/Padron/Index");
+                } else
+                {
+                    return RedirectToPage("/Padron/Edit", new { id = servidorPublico.ServidorPublicoId.ToString() });
+                }
             }
             else
             {
