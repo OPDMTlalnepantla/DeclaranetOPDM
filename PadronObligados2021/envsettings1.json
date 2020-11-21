@@ -1,0 +1,12 @@
+{
+  // Possible string values reported below. When empty it use ENV variable value or Visual Studio setting.
+  // - Production
+  // - Staging
+  // - Test
+  // - Development
+  "commands": {
+    "Development": "Microsoft.AspNet.Server.Kestrel --ASPNET_ENV Development",
+    "Staging": "Microsoft.AspNet.Server.Kestrel --ASPNET_ENV Staging",
+    "Production": "Microsoft.AspNet.Server.Kestrel --ASPNET_ENV Production"
+  }
+}

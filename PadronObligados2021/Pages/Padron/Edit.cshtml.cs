@@ -48,7 +48,7 @@ namespace PadronObligados2021.Pages.Padron
            ViewData["FuncionesPrincipales"] = new SelectList(_context.FuncionPrincipal, "FuncionPrincipalId", "Nombre");
            ViewData["EntidadesFederativas"] = new SelectList(_context.EntidadFederativa, "EntidadFederativaId", "Nombre");
            ViewData["Municipios"] = new SelectList(_context.Municipio, "MunicipioId", "Nombre");
-           ViewData["NivelesEscolarId"] = new SelectList(_context.NivelEscolar, "NivelEscolarId", "Nombre");
+           ViewData["NivelesEscolaridad"] = new SelectList(_context.NivelEscolar, "NivelEscolarId", "Nombre");
            ViewData["RegimenesMatrimoniales"] = new SelectList(_context.RegimenMatrimonial, "RegimenMatrimonialId", "Nombre");
            ViewData["Sectores"] = new SelectList(_context.Sector, "SectorId", "Nombre");
            ViewData["SituacionesPersonales"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "Nombre");
@@ -91,7 +91,7 @@ namespace PadronObligados2021.Pages.Padron
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Login");
         }
 
         private bool ServidorPublicoExists(int id)

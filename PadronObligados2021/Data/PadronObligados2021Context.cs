@@ -30,7 +30,7 @@ namespace PadronObligados2021.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder
                 .UseLoggerFactory(MyLoggerFactory)
-                .UseSqlServer(@"Server=L2-IV-SIS-2;Database=PadronObligados2021; user id=sa; password=Aaaa1234;ConnectRetryCount=0")
+                .UseSqlServer(@"server=192.168.100.7; database=PadronObligados2021; user id=declaranet; password=IIII5678;ConnectRetryCount=0")
                 .EnableDetailedErrors();
     }
 }

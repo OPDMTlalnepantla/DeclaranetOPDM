@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>PadronObligados2021.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,17 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\Aviso_de_Privacidad_Declaracion_patrimonial.pdf" />
     <Content Remove="wwwroot\Imagenes\DeclaracionAmplia.JPG" />
     <Content Remove="wwwroot\Imagenes\DeclaracionAmplia.png" />
     <Content Remove="wwwroot\Imagenes\DeclaracionSimple.JPG" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Aviso_de_Privacidad_Declaracion_patrimonial.pdf" />
     <None Include="wwwroot\Imagenes\DeclaracionAmplia.JPG" />
     <None Include="wwwroot\Imagenes\DeclaracionAmplia.png" />
     <None Include="wwwroot\Imagenes\DeclaracionSimple.JPG" />
+    <None Include="wwwroot\PDFs\Avisos\Aviso_de_Privacidad_Declaracion_patrimonial.pdf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,5 +48,18 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <!-- Custom Property Group added to add the Environment name during publish
+  The EnvironmentName property is used during the publish for the Environment variable in web.config
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == '' Or '$(Configuration)' == 'Debug'">
+    <EnvironmentName>Development</EnvironmentName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' != '' AND '$(Configuration)' != 'Debug' ">
+    <EnvironmentName>Production</EnvironmentName>
+  </PropertyGroup>  
 
 </Project>

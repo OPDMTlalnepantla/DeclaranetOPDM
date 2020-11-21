@@ -99,7 +99,7 @@ namespace PadronObligados2021.Models
         //CambioDependencia                                                 43 Pregunta si cambio de dependencia o ente público en el mismo orden de gobierno(SI/NO)  Texto, 2 caracteres
         //EsCambioPorEscalafon                                              44 Pregunta el cambio fue por escalafón(SI/NO)    Texto, 2 caracteres
         [StringLength(50)]
-        [Display(Name = "Número identificación oficial:")]
+        [Display(Name = "Número identificación oficial(INE):")]
         public string NumeroIdentificacionOficial { get; set; }//           45 Número de identificación de una identificación oficial como el INE Texto, 50 caracteres
         //ClaveServidorPublico                                              46 Clave del servicio público Texto, 10 caracteres
         //EsNivelJefeDepartamento                                              Nivel igual a jefe de departamento u homologo o superior si/no(descripción) Texto, 11 caracteres

@@ -6,17 +6,319 @@
 <form method="post" asp-page="Login">
     <table>
         <tr>
-            <td>Usuario:</td>
+            <td>Número de Empleado:</td>
             <td><input type="text" asp-for="@Model.Username" /></td>
         </tr>
         <tr>
             <td>Contraseña:</td>
-            <td><input type="password" asp-for="@Model.Password" /></td>
+            <td><input type="password" class="text-capitalize" asp-for="@Model.Password" />R.F.C. Con Mayusculas, sin homoclave</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td><input type="submit" value="Login" /></td>
         </tr>
     </table>
-
+    <h2>Personas Físicas</h2>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 1ª.- </strong></span>El R.F.C. (Registro Federal de Contribuyentes), para las Personas Físicas invariablemente se compondrá de cuatro letras, seis números, dígitos, Para formar el R.F.C. se tomará:
+    <ol>
+        <li>La primera letra del apellido paterno y la siguiente primera vocal del mismo.</li>
+        <li>La primera letra del apellido materno.</li>
+        <li>La primera letra del nombre.</li>
+    </ol>
+    <p>
+        <span style="font-family: Arial;">
+                Ejemplo:
+        </span>
+    </p>
+    <p>
+        Apellido paterno:    BAÑOS        <span style="font-family: Arial;">
+            <strong>
+                BA<br />
+            </strong>
+        </span>
+        Apellido materno:    FRIAZ        <span style="font-family: Arial;">
+            <strong>
+                F<br />
+            </strong>
+        </span>
+        Nombre:        JAIME        <span style="font-family: Arial;">
+            <strong>
+                J<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Resultado de la expresión alfabética<span style="font-family: Arial;">
+            <strong>
+                : <span style="font-size: 8pt;">BAFJ</span>.<br />
+            </strong>
+        </span>
+    </p>
+    <p>A continuación se anotará la fecha de nacimiento del contribuyente en el siguiente orden:</p>
+    <ul>
+        <li>AÑO Se tomarán las dos últimas cifras escribiéndolas con números arábigos.</li>
+        <li>MES Se tomará el mes de nacimiento en su número de orden, escribiéndolo con números arábigos.</li>
+        <li>DIA Se escribirá con números arábigos.</li>
+    </ul>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>AÑO:        1907        07</p>
+    <p>MES:        Abril        04</p>
+    <p>DIA:        1        01</p>
+    <p>
+        Como resultado tendremos la expresión numérica del registro: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                070401<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Jaime Baños Friaz: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                BAFJ-070401-AZ2<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Francisco Ortiz Pérez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                OIPF-290225-PAI<br />
+            </strong>
+        </span>
+    </p>
+    <p>Este registro será alfabéticamente-numérico, tomando en consideración el orden en que aparezcan las cuatro letras que sirven de base para el mismo y la numeración progresiva correspondiente a la fecha de nacimiento del contribuyente.</p>
+    <p><span style="font-size: 8pt;"><span style="font-family: Arial;"><strong>REGLA 2ª</strong></span>.</span>&#8211; Cuando la letra inicial de cualquiera de los apellidos o nombre sea compuesta, únicamente se anotará la inicial de esta, en la CH, la C, y en la LL la L</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Manuel Chávez González: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                CAGM-240618<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Felipe Camargo Llamas: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                CALF-450228<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Charles Kennedy Truman: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                KETC-511012<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 3ª.- </strong></span>En los casos en que el apellido paterno de la persona física se componga de una o dos letras, el registro se hará de la siguiente manera:</p>
+    <p>1.- La primera letra del apellido paterno.</p>
+    <p>2.- La primera letra del apellido materno.</p>
+    <p>3.- La primera y segunda letras del nombre.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplo:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Álvaro de la O Lozano: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                OLAL-401201<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Ernesto Ek Rivera: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                ERER-071120<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 4ª.- </strong></span>Cuando el apellido paterno o el materno sean compuestos, se tomará para la clasificación la primera palabra que corresponda a cualquiera de ellos.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Dolores San Martín Dávalos: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                SADD-180812<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Mario Sánchez de la Barquera Gómez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                SAGM-190224<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Antonio Jiménez Ponce de León: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                JIPA-170808<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 5ª.- </strong></span>Cuando el nombre sea compuesto, o sea que esté formado por dos o más palabras, se tomará para la clasificación la letra inicial de la primera, siempre que no sea María o José dado su frecuente uso, en cuyo caso se tomará la primera letra de la segunda palabra.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplo:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Luz María Fernández Juárez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                FEJL-200405<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        José Antonio Camargo Hernández: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                CAHA-211218<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 6ª.- </strong></span>En los casos en que la persona física use un sólo apellido (hijo natural), se clasificará por el apellido paterno o materno, según figure en el Registro Civil, más la primera y segunda letras del nombre.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplo:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Juan Martínez <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                MAJU-420116<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 7ª.- </strong></span>En los casos de las mujeres casadas o viudas, se tomarán los apellidos paterno y materno, así como el nombre, omitiendo el apellido del esposo o del que fue el esposo, para evitar cambios en casos de divorcio, viudez o nuevas nupcias.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        María García Martínez de Robles: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                GAMM-400909<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Josefina Guzmán Ortiz Vda. De Pérez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                GUOJ-240228<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 8ª.- </strong></span>Cuando en el nombre de las personas físicas figuren las palabras «DE», «DE LA», «DE LAS», DE LOS», en los apellidos castellanos; «DA» y «DE» , de los portugueses; «DI», «DE», «DEGLI», «DEL», «DALL» y «DELLA», de los Italianos; «D», «DES», «DU» de los franceses; «VON», de los alemanes; «VAM», «VAMDEN» y «VANDER» de los holandeses, etc., así como la conjugación «Y», no deberán considerarse como elementos de clasificación.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplos:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Marcelo Van Prael Iturriaga: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                PAIM-490112<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Carmen de la Peña Ramírez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                PERC-080925<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial;"><strong><span style="font-size: 8pt;">REGLA 9ª</span>.- </strong></span>Los títulos profesionales, grados militares o las abreviaturas correspondientes a padre o hijo, no se tomarán en consideración para efecto de clasificación.</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplo:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        Lic. Manuel Romero Gómez: <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                ROGM-360125<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        Raymundo Solís Adame Jr. <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                SOAR-011024<br />
+            </strong>
+        </span>
+    </p>
+    <p><span style="font-family: Arial; font-size: 8pt;"><strong>REGLA 10ª.- </strong></span>Cuando de las cuatro letras que formen la expresión alfabética, resulte una palabra inconveniente, la última letra será substituida por una «X»</p>
+    <p>
+        <span style="font-family: Arial;">
+            <em>
+                Ejemplo:<br />
+            </em>
+        </span>
+    </p>
+    <p>
+        BUEY    <span style="font-family: Arial; font-size: 8pt;"><strong>BUEX    </strong></span>LOBA    <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                LOBX<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        BOFE    <span style="font-family: Arial; font-size: 8pt;"><strong>BOFX    </strong></span>LOCA    <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                LOCX<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        COGE    <span style="font-family: Arial; font-size: 8pt;"><strong>COGX    </strong></span>JOTO    <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                JOTX<br />
+            </strong>
+        </span>
+    </p>
+    <p>
+        FETO    <span style="font-family: Arial; font-size: 8pt;"><strong>FETX    </strong></span>LORA    <span style="font-family: Arial; font-size: 8pt;">
+            <strong>
+                LORX<br />
+            </strong>
+        </span>
+    </p>
 </form>

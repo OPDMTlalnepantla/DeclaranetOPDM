@@ -24,7 +24,7 @@
                 <input asp-for="ServidorPublico.Nombres" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.Nombres" class="text-danger"></span>
             </TD>
-        <TR>
+        @*<TR>
             <TD><label asp-for="ServidorPublico.PrimerApellido" class="control-label"></label></TD>
             <TD>
                 <input asp-for="ServidorPublico.PrimerApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
@@ -35,7 +35,7 @@
             <TD>
                 <input asp-for="ServidorPublico.SegundoApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.SegundoApellido" class="text-danger"></span>
-            </TD>
+            </TD>*@
         <TR>
             <TD><label asp-for="ServidorPublico.CURP" class="control-label"></label></TD>
             <TD>
@@ -47,7 +47,7 @@
             <TD>
                 <input asp-for="ServidorPublico.RFC" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />   Homoclave:
                 <span asp-validation-for="ServidorPublico.RFC" class="text-danger"></span>
-                <input asp-for="ServidorPublico.Homoclave" class="text-capitalize" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.Homoclave" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.Homoclave" class="text-danger"></span>
             </TD>
         <TR>
@@ -62,7 +62,7 @@
         <TR>
             <TD>Entidad Federativa:</TD>
             <TD>
-                <select asp-for="EntidadFederativaId" asp-items="ViewBag.EntidadesFederativas"></select>
+                <select asp-for="EntidadFederativaId" asp-items="ViewBag.EntidadesFederativas" onchange=""></select>
                 <span asp-validation-for="EntidadFederativaId" class="text-danger"></span>
             </TD>
         <TR>
@@ -133,15 +133,15 @@
                 <input asp-for="ServidorPublico.TelefonoOficina" type="tel" placeholder="telefono" size=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.TelefonoOficina" class="text-danger"></span>
             </TD>
-        <TR>
-            @*EsServidorPublicoAnioAnterior*@
+        @*<TR>
+            EsServidorPublicoAnioAnterior
             <TD><label asp-for="ServidorPublico.EsServidorPublicoAnioAnterior" class="control-label"></label></TD>
             <TD>
                 <SELECT NAME="OPCION">
                     <OPTION value="SI">SI</OPTION>
                     <OPTION value="NO">NO</OPTION>
                 </SELECT>Escoja una opción
-            </TD>
+            </TD>*@
 
         <TR>
             <TD>DATOS CURRICULARES</TD>
