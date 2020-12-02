@@ -14,6 +14,7 @@ namespace PadronObligados2021.Pages.Padron
     public class EditModel : PageModel
     {
         private readonly PadronObligados2021.Data.PadronObligados2021Context _context;
+        public List<SelectListItem> Niveles { get; set; }
 
         public EditModel(PadronObligados2021.Data.PadronObligados2021Context context)
         {
@@ -24,6 +25,8 @@ namespace PadronObligados2021.Pages.Padron
         public ServidorPublico ServidorPublico { get; set; }
         [BindProperty]
         public int EntidadFederativaId { get; set; }
+        [BindProperty]
+        public string nivelEscolaridad { get; set; }
 
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -47,12 +50,18 @@ namespace PadronObligados2021.Pages.Padron
             }
            ViewData["FuncionesPrincipales"] = new SelectList(_context.FuncionPrincipal, "FuncionPrincipalId", "Nombre");
            ViewData["EntidadesFederativas"] = new SelectList(_context.EntidadFederativa, "EntidadFederativaId", "Nombre");
-           ViewData["Municipios"] = new SelectList(_context.Municipio, "MunicipioId", "Nombre");
+           ViewData["Municipios"] = new SelectList(_context.Municipio.OrderBy(s => s.Nombre), "MunicipioId", "Nombre");
            ViewData["NivelesEscolaridad"] = new SelectList(_context.NivelEscolar, "NivelEscolarId", "Nombre");
            ViewData["RegimenesMatrimoniales"] = new SelectList(_context.RegimenMatrimonial, "RegimenMatrimonialId", "Nombre");
            ViewData["Sectores"] = new SelectList(_context.Sector, "SectorId", "Nombre");
            ViewData["SituacionesPersonales"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "Nombre");
            ViewData["EstatusEscolaridad"] = new SelectList(_context.SituacionPersonal, "SituacionPersonalId", "Nombre");
+            ViewData["EstatusesNivelEscolaridad"] = new SelectList(_context.EstatusNivelEscolaridad, "EstatusNivelEscolaridadId", "Nombre");
+            ViewData["DocumentosObtenidos"] = new SelectList(_context.DocumentoObtenido, "DocumentoObtenidoId", "Nombre");
+            ViewData["LugaresInstituciones"] = new SelectList(_context.LugarInstitucion, "LugarInstitucionId", "Nombre");
+            ViewData["Ambitos"] = new SelectList(_context.Ambito, "AmbitoId", "Nombre");
+            ViewData["AmbitosPublicos"] = new SelectList(_context.AmbitoPublico, "AmbitoPublicoId", "Nombre");
+            ViewData["Niveles"] = new SelectList(_context.Nivel, "NivelId", "Nombre");
 
             //Staff = new List<SelectListItem>
             //{

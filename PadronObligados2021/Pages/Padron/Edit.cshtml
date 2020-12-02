@@ -24,18 +24,18 @@
                 <input asp-for="ServidorPublico.Nombres" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.Nombres" class="text-danger"></span>
             </TD>
-        @*<TR>
-            <TD><label asp-for="ServidorPublico.PrimerApellido" class="control-label"></label></TD>
-            <TD>
-                <input asp-for="ServidorPublico.PrimerApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
-                <span asp-validation-for="ServidorPublico.PrimerApellido" class="text-danger"></span>
-            </TD>
-        <TR>
-            <TD><label asp-for="ServidorPublico.SegundoApellido" class="control-label"></label></TD>
-            <TD>
-                <input asp-for="ServidorPublico.SegundoApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
-                <span asp-validation-for="ServidorPublico.SegundoApellido" class="text-danger"></span>
-            </TD>*@
+            @*<TR>
+                <TD><label asp-for="ServidorPublico.PrimerApellido" class="control-label"></label></TD>
+                <TD>
+                    <input asp-for="ServidorPublico.PrimerApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
+                    <span asp-validation-for="ServidorPublico.PrimerApellido" class="text-danger"></span>
+                </TD>
+            <TR>
+                <TD><label asp-for="ServidorPublico.SegundoApellido" class="control-label"></label></TD>
+                <TD>
+                    <input asp-for="ServidorPublico.SegundoApellido" class="text-capitalize" type="text" readonly SIZE=20 MAXLENGTH=40 />
+                    <span asp-validation-for="ServidorPublico.SegundoApellido" class="text-danger"></span>
+                </TD>*@
         <TR>
             <TD><label asp-for="ServidorPublico.CURP" class="control-label"></label></TD>
             <TD>
@@ -59,22 +59,22 @@
 
         <TR>
             <TD>DOMICILIO DEL DECLARANTE</TD>
-        <TR>
+            @*<TR>
             <TD>Entidad Federativa:</TD>
             <TD>
                 <select asp-for="EntidadFederativaId" asp-items="ViewBag.EntidadesFederativas" onchange=""></select>
                 <span asp-validation-for="EntidadFederativaId" class="text-danger"></span>
-            </TD>
+            </TD>*@
         <TR>
             <TD><label asp-for="ServidorPublico.MunicipioId" class="control-label"></label></TD>
             <TD>
-                <select asp-for="ServidorPublico.MunicipioId" asp-items="ViewBag.Municipios"></select>
+                <select asp-for="ServidorPublico.MunicipioId" asp-items="ViewBag.Municipios"></select>Presentar lista, ubicar digitando letras iniciales
                 <span asp-validation-for="ServidorPublico.MunicipioId" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.LocalidadNombre" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.LocalidadNombre" class="text-capitalize" type="text" SIZE=20 MAXLENGTH=40 />   <label asp-for="ServidorPublico.CodigoPostal" class="control-label"></label>
+                <input asp-for="ServidorPublico.LocalidadNombre" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />   <label asp-for="ServidorPublico.CodigoPostal" class="control-label"></label>
                 <span asp-validation-for="ServidorPublico.LocalidadNombre" class="text-danger"></span>
                 <input asp-for="ServidorPublico.CodigoPostal" type="text" SIZE=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.CodigoPostal" class="text-danger"></span>
@@ -82,16 +82,16 @@
         <TR>
             <TD><label asp-for="ServidorPublico.CalleNombre" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.CalleNombre" class="text-capitalize" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.CalleNombre" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.CalleNombre" class="text-danger"></span>
             </TD>
         <TR>
-            <TD><label asp-for="ServidorPublico.LocalidadNombre" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.NumeroExterior" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.NumeroExterior" class="text-capitalize" type="text" SIZE=20 MAXLENGTH=40 />   <label asp-for="ServidorPublico.NumeroInterior" class="control-label"></label>
+                <input asp-for="ServidorPublico.NumeroExterior" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />   <label asp-for="ServidorPublico.NumeroInterior" class="control-label"></label>
                 <span asp-validation-for="ServidorPublico.NumeroExterior" class="text-danger"></span>
 
-                <input asp-for="ServidorPublico.NumeroInterior" class="text-capitalize" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.NumeroInterior" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.NumeroInterior" class="text-danger"></span>
             </TD>
         <TR>
@@ -133,7 +133,7 @@
                 <input asp-for="ServidorPublico.TelefonoOficina" type="tel" placeholder="telefono" size=20 MAXLENGTH=40 />
                 <span asp-validation-for="ServidorPublico.TelefonoOficina" class="text-danger"></span>
             </TD>
-        @*<TR>
+            @*<TR>
             EsServidorPublicoAnioAnterior
             <TD><label asp-for="ServidorPublico.EsServidorPublicoAnioAnterior" class="control-label"></label></TD>
             <TD>
@@ -154,35 +154,28 @@
         <TR>
             <TD><label asp-for="ServidorPublico.InstitucionEducativa" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.InstitucionEducativa" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.InstitucionEducativa" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.InstitucionEducativa" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.CarreraArea" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.CarreraArea" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.CarreraArea" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.CarreraArea" class="text-danger"></span>
             </TD>
         <TR>
             @*ServidorPublico.EstatusNivelEscolaridad*@
-            <TD><label asp-for="ServidorPublico.EstatusNivelEscolaridad" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.EstatusNivelEscolaridadId" class="control-label"></label></TD>
             <TD>
-                <SELECT NAME="OPCION">
-                    <OPTION value="CURSANDO">CURSANDO</OPTION>
-                    <OPTION value="TRUNCO">TRUNCO</OPTION>
-                    <OPTION value="FINALIZADO">FINALIZADO</OPTION>
-                </SELECT>Escoja una opción
+                <select asp-for="ServidorPublico.EstatusNivelEscolaridadId" asp-items="ViewBag.EstatusesNivelEscolaridad"></select>
+                <span asp-validation-for="ServidorPublico.EstatusNivelEscolaridadId" class="text-danger"></span>
             </TD>
         <TR>
             @*ServidorPublico.DocumentoObtenido*@
-            <TD><label asp-for="ServidorPublico.DocumentoObtenido" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.DocumentoObtenidoId" class="control-label"></label></TD>
             <TD>
-                <SELECT NAME="OPCION">
-                    <OPTION value="BOLETA">BOLETA</OPTION>
-                    <OPTION value="CERTIFICADO">CERTIFICADO</OPTION>
-                    <OPTION value="CONSTANCIA">CONSTANCIA</OPTION>
-                    <OPTION value="TITULO">TITULO</OPTION>
-                </SELECT>Escoja una opción
+                <select asp-for="ServidorPublico.DocumentoObtenidoId" asp-items="ViewBag.DocumentosObtenidos"></select>
+                <span asp-validation-for="ServidorPublico.DocumentoObtenidoId" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.FechaObtencion" class="control-label"></label></TD>
@@ -192,62 +185,60 @@
             </TD>
         <TR>
             @*ServidorPublico.LugarInstitucion*@
-            <TD><label asp-for="ServidorPublico.LugarInstitucion" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.LugarInstitucionId" class="control-label"></label></TD>
             <TD>
-                <SELECT NAME="OPCION">
-                    <OPTION value="MÉXICO">MÉXICO</OPTION>
-                    <OPTION value="EN EL EXTRANJERO">EN EL EXTRANJERO</OPTION>
-                </SELECT>Escoja una opción
+                <select asp-for="ServidorPublico.LugarInstitucionId" asp-items="ViewBag.LugaresInstituciones"></select>
+                <span asp-validation-for="ServidorPublico.LugarInstitucionId" class="text-danger"></span>
             </TD>
 
         <TR>
-            <TD>EXPERIENCIA LABORAL</TD>
+            <TD>EXPERIENCIA LABORAL (último empleo)* Dejar en blanco en caso de ser el primer empleo</TD>
         <TR>
-            <TD><label asp-for="ServidorPublico.AmbitoSectorLaboral" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.AmbitoId" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.AmbitoSectorLaboral" type="text" SIZE=20 MAXLENGTH=40 />
-                <span asp-validation-for="ServidorPublico.AmbitoSectorLaboral" class="text-danger"></span>
+                <select asp-for="ServidorPublico.AmbitoId" asp-items="ViewBag.Ambitos"></select>
+                <span asp-validation-for="ServidorPublico.AmbitoId" class="text-danger"></span>
             </TD>
         <TR>
-            <TD><label asp-for="ServidorPublico.Nivel" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.NivelId" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.Nivel" type="text" SIZE=20 MAXLENGTH=40 />
-                <span asp-validation-for="ServidorPublico.Nivel" class="text-danger"></span>
+                <select asp-for="ServidorPublico.NivelId" asp-items="ViewBag.Niveles"></select>
+                <span asp-validation-for="ServidorPublico.NivelId" class="text-danger"></span>
             </TD>
         <TR>
-            <TD><label asp-for="ServidorPublico.AmbitoPublico" class="control-label"></label></TD>
+            <TD><label asp-for="ServidorPublico.AmbitoPublicoId" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.AmbitoPublico" type="text" SIZE=20 MAXLENGTH=40 />
-                <span asp-validation-for="ServidorPublico.AmbitoPublico" class="text-danger"></span>
+                <select asp-for="ServidorPublico.AmbitoPublicoId" asp-items="ViewBag.AmbitosPublicos"></select>
+                <span asp-validation-for="ServidorPublico.AmbitoPublicoId" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.NombreEntePublico" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.NombreEntePublico" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.NombreEntePublico" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.NombreEntePublico" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.RFCEntePublico" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.RFCEntePublico" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.RFCEntePublico" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.RFCEntePublico" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.AreaAdscripcion" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.AreaAdscripcion" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.AreaAdscripcion" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.AreaAdscripcion" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.EmpleoCargoComision" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.EmpleoCargoComision" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.EmpleoCargoComision" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.EmpleoCargoComision" class="text-danger"></span>
             </TD>
         <TR>
             <TD><label asp-for="ServidorPublico.FuncionPrincipalExperiencia" class="control-label"></label></TD>
             <TD>
-                <input asp-for="ServidorPublico.FuncionPrincipalExperiencia" type="text" SIZE=20 MAXLENGTH=40 />
+                <input asp-for="ServidorPublico.FuncionPrincipalExperiencia" type="text" SIZE=20 MAXLENGTH=40 style="text-transform:uppercase" />
                 <span asp-validation-for="ServidorPublico.FuncionPrincipalExperiencia" class="text-danger"></span>
             </TD>
         <TR>
@@ -276,9 +267,9 @@
             </TD>
         <TR>
             <TD><B>Pulse aquí:</B></TD>
-            <TD ALIGN=CENTER>
+            <TD ALIGN="left">
                 <INPUT TYPE="submit" VALUE="Guardar" class="btn btn-primary">
-                <INPUT TYPE="reset" VALUE="Limpiar" class="btn btn-danger">
+                @*<INPUT TYPE="reset" VALUE="Limpiar" class="btn btn-danger">*@
             </TD>
 
     </TABLE>

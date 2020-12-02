@@ -23,6 +23,12 @@ namespace PadronObligados2021.Data
         public DbSet<PadronObligados2021.Models.RegimenMatrimonial> RegimenMatrimonial { get; set; }
         public DbSet<PadronObligados2021.Models.Sector> Sector { get; set; }
         public DbSet<PadronObligados2021.Models.SituacionPersonal> SituacionPersonal { get; set; }
+        public DbSet<PadronObligados2021.Models.EstatusNivelEscolaridad> EstatusNivelEscolaridad { get; set; }
+        public DbSet<PadronObligados2021.Models.DocumentoObtenido> DocumentoObtenido { get; set; }
+        public DbSet<PadronObligados2021.Models.LugarInstitucion> LugarInstitucion { get; set; }
+        public DbSet<PadronObligados2021.Models.Ambito> Ambito { get; set; }
+        public DbSet<PadronObligados2021.Models.AmbitoPublico> AmbitoPublico { get; set; }
+        public DbSet<PadronObligados2021.Models.Nivel> Nivel { get; set; }
 
         public static readonly ILoggerFactory MyLoggerFactory
             = LoggerFactory.Create(builder => { builder.AddConsole(); });
