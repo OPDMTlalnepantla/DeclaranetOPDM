@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartupObject>PadronObligados2021.Program</StartupObject>
+    <UserSecretsId>25464c3c-ea60-4369-a0fc-09f83b2f034b</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
